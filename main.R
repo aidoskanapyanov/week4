@@ -14,3 +14,18 @@ best("MD", "heart attack")
 best("MD", "pneumonia")
 best("BB", "heart attack")
 best("NY", "hert attack")
+
+a = data.frame(a=c('ab','ac','b'),b=c(1,1,3))
+
+a[order(a$b,a$a),]
+
+
+source('rankhospital.R')
+rankhospital("TX", "heart failure", 4)
+rankhospital("MD", "heart attack", "worst")
+rankhospital("MN", "heart attack", 5000)
+
+source("rankall.R")
+head(rankall("heart attack", 20), 10)
+tail(rankall("pneumonia", "worst"), 3)
+tail(rankall("heart failure"), 10)
